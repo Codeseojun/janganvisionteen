@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>햄버거 메뉴 테스트</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 0 1rem;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            color: white;
+        }
+
+        .menubar {
+            font-size: 1.8rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #2c3e50;
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            z-index: 2000;
+        }
+
+        .side-menu a {
+            padding: 1rem;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #444;
+        }
+
+        .side-menu a:hover {
+            background: #34495e;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <button class="menubar" onclick="openMenu()">☰</button>
+    </nav>
+
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" onclick="closeMenu()">✕</button>
+        <a href="#intro">소개</a>
+        <a href="#worship">예배 시간</a>
+        <a href="#location">오시는 길</a>
+        <a href="#worship-team">워십팀</a>
+        <a href="#contact">연락처</a>
+    </div>
+
+    <script>
+        function openMenu() {
+            document.getElementById('sideMenu').style.left = '0';
+        }
+        function closeMenu() {
+            document.getElementById('sideMenu').style.left = '-250px';
+        }
+    </script>
+
+</body>
+
+</html>
